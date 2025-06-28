@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products - BMK Machine Tools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fafc;
+      color: #1b1f3b;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1b1f3b;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00b4d8;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0%;
+      background: #00b4d8;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      background: url('https://wallpapercave.com/wp/wp10317279.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 60px 10% 40px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    :root {
+  --bmk-light-bg: #f2f2f2;
+  --bmk-white: #ffffff;
+  --bmk-dark-blue: #002244;
+  --bmk-orange: #ff6600;
+  --bmk-text: #1a1a1a;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fff;
+}
+
+#products {
+  background-color: var(--bmk-light-bg);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#products h2 {
+  color: var(--bmk-dark-blue);
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background-color: var(--bmk-white);
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background-color: #f8f8f8; 
+  display: block;
+  padding: 10px; 
+}
+
+
+.product-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.product-info h3 {
+  margin: 0 0 10px;
+  color: var(--bmk-dark-blue);
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center; 
+}
+
+.product-info h3::after {
+  content: "";
+  display: block;
+  width: 110px;
+  height: 3px;
+  background-color: var(--bmk-orange);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+.product-info p {
+  color: var(--bmk-text);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--bmk-orange);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin: 0 auto;           /* 👈 Centering trick */
+  display: block;           /* Needed for margin auto to take effect */
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #e65c00;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+    .cta-bottom {
+      text-align: center;
+      padding: 50px 10%;
+      background-color: #eef4f9;
+    }
+
+    .cta-bottom h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #0077b6;
+    }
+
+    .cta-bottom a {
+      background-color: #0077b6;
+      color: white;
+      padding: 14px 26px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+
+    .cta-bottom a:hover {
+      background-color: #005f8a;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #1b1f3b;
+      color: #ccc;
+      text-align: center;
+      padding: 25px 10%;
+    }
+
+    .socials {
+      margin: 15px 0;
+    }
+
+    .socials a {
+      margin: 0 12px;
+      color: #ccc;
+      font-size: 1.4rem;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      color: #00b4d8;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .product-card {
+        padding: 20px;
+      }
+
+      .cta-bottom h3 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with Navigation -->
+  <header>
+    <div class="logo">BMK Machine Tools</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html" style="color: #00b4d8;">Products</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Our Products</h1>
+    <p>Explore our range of industrial-grade electric motors and machine tool components.</p>
+  </section>
+
+  <!-- Product Cards -->
+
+    <section id="products">
+    <h2>Featured Products</h2>
+    <div class="product-container">
+      <div class="product-card">
+        <img src="images/Unit.jpg" alt="Product 1">
+        <div class="product-info">
+          <h3>Lubrication Units / Grease & Hand Pump</h3>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/TOOLS.jpg" alt="Product 2">
+        <div class="product-info">
+          <h3>Lubrication System Accessories</h3>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/tools2.jpg" alt="Product 1">
+        <div class="product-info">
+          <h3>Lubrication Fittings & Connectors</h3>
+          <a href="BMK - Products Range.pdf" class="btn">More Products Range</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Bottom -->
+  <section class="cta-bottom">
+    <h3>Download our complete product catalogue for technical specs & more</h3>
+    <a href="BMK CATALOGUE.pdf" target="_blank">Visit Our Catalogue</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="socials">
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:bmkmachinetools@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>© 2025 WEB LIFT - ALL RIGHTS RESERVED</p>
+  </footer>
+
+</body>
+</html>

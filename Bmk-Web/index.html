@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BMK Machine Tools - Company Profile</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #1b1f3b;
+      background-color: #f9fafc;
+    }
+
+    header {
+      background-color: #1b1f3b;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: #00b4d8;
+    }
+
+    nav a::after {
+      content: "";
+      display: block;
+      width: 0%;
+      height: 2px;
+      background: #00b4d8;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .main-title {
+      text-align: center;
+      padding: 100px 10% 60px;
+      color: white;
+      background: url('https://static.vecteezy.com/system/resources/previews/039/350/257/non_2x/panoramic-industrial-silhouette-oil-industry-factory-buildings-refinery-complex-with-pipes-and-tanks-landscape-background-illustration-vector.jpg') no-repeat center center/cover;
+      position: relative;
+    }
+
+    .main-title::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .main-title h1,
+    .main-title p {
+      position: relative;
+      z-index: 2;
+    }
+
+    .main-title h1 {
+      font-size: 3rem;
+      font-weight: 800;
+    }
+
+    .main-title p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      font-weight: 400;
+    }
+
+    .company-profile {
+      background: #ffffff;
+      padding: 50px 10%;
+    }
+
+    .company-profile h2 {
+      font-size: 2rem;
+      color: #0077b6;
+      margin-bottom: 15px;
+      border-left: 5px solid #0096c7;
+      padding-left: 10px;
+    }
+
+    .company-profile p {
+      margin-bottom: 20px;
+    }
+
+    .company-profile ul {
+      list-style: none;
+    }
+
+    .company-profile li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 12px;
+    }
+
+    .company-profile li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: #0077b6;
+      font-weight: bold;
+    }
+
+    .industries {
+      background-color: #eef4f9;
+      padding: 60px 10%;
+      text-align: center;
+    }
+
+    .industries h2 {
+      font-size: 2rem;
+      color: #0077b6;
+      margin-bottom: 40px;
+    }
+
+    .industry-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .industry {
+      background: #fff;
+      padding: 25px;
+      width: 180px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .industry:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    .industry img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 12px;
+    }
+
+    .industry p {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .cta-bottom {
+      background-color: #ffffff;
+      padding: 60px 10%;
+      text-align: center;
+    }
+
+    .cta-bottom h3 {
+      font-size: 1.5rem;
+      color: #0077b6;
+      margin-bottom: 20px;
+    }
+
+    .cta-bottom button {
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      margin: 10px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .cta-bottom button:hover {
+      background-color: #005f8a;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #1b1f3b;
+      color: #ccc;
+      text-align: center;
+      padding: 20px 10%;
+    }
+
+    footer .socials {
+      margin: 10px 0;
+    }
+
+    footer a {
+      margin: 0 10px;
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 1.2rem;
+    }
+
+    footer a:hover {
+      color: #00b4d8;
+    }
+
+    @media (max-width: 768px) {
+      header, .main-title, .company-profile, .industries, .cta-bottom {
+        padding: 20px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .industry-icons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .industry {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .main-title h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">BMK Machine Tools</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- Main Title -->
+  <section class="main-title">
+    <h1>BMK MACHINE TOOLS</h1>
+    <p>Lubrication Systems | Hydraulic & Pneumatic Fittings | Motors & Spares</p>
+  </section>
+
+  <!-- Company Profile -->
+  <section class="company-profile">
+    <h2>COMPANY PROFILE</h2>
+    <p>BMK Machine Tools specializes in providing advanced lubrication and hydraulic systems designed to enhance industrial efficiency and reduce equipment wear. We take pride in delivering cutting-edge solutions to meet industry needs.</p>
+    <ul>
+      <li>Increased operational efficiency</li>
+      <li>Stringent quality assurance</li>
+      <li>In-house testing and inspection facilities</li>
+      <li>Reduced equipment wear and extended service life</li>
+      <li>Precise lubrication at critical points</li>
+      <li>Optimized energy and lubricant usage</li>
+    </ul>
+  </section>
+
+  <!-- Industries -->
+  <section class="industries">
+    <h2>Industries We Serve</h2>
+    <div class="industry-icons">
+      <div class="industry">
+        <img src="https://img.icons8.com/ios-filled/50/factory.png" alt="Manufacturing" />
+        <p>Manufacturing & Processing</p>
+      </div>
+      <div class="industry">
+        <img src="https://img.icons8.com/ios-filled/50/pill.png" alt="Pharma" />
+        <p>Food, Pharma & Chemicals</p>
+      </div>
+      <div class="industry">
+        <img src="https://img.icons8.com/ios-filled/50/news.png" alt="Printing" />
+        <p>Printing & Paper</p>
+      </div>
+      <div class="industry">
+        <img src="https://img.icons8.com/ios-filled/50/water-bottle.png" alt="Packaging" />
+        <p>Bottling & Packaging</p>
+      </div>
+      <div class="industry">
+        <img src="https://img.icons8.com/ios-filled/50/building.png" alt="Construction" />
+        <p>Construction & Materials</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Bottom Section -->
+ <section class="cta-bottom">
+  <h3>Need Custom Industrial Solutions?</h3>
+  
+  <a href="BMK - Products Range.pdf" target="_blank">
+    <button>Browse Our Products Range</button>
+  </a>
+  
+
+  <a href="contact.html">
+    <button>Contact Us</button>
+  </a>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Web Lift - All Rights Reserved.</p>
+    <div class="socials">
+      <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:bmkmachinetools@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>
